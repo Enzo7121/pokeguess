@@ -119,7 +119,7 @@ function App() {
                 paddingX={10}
                 paddingY={5}
                 isDisabled={loading || answered || !name}
-                onClick={() => handleAnswer()}
+                onClick={handleAnswer}
               >
                 Guess
               </Button>
@@ -135,8 +135,11 @@ function App() {
                     color="white"
                     border="4px"
                     borderColor="black"
+                    fontWeight="normal"
+                    paddingX={10}
+                    paddingY={5}
                     backgroundColor="blue.400"
-                    onClick={() => handleReset()}
+                    onClick={handleReset}
                   >
                     Volver a jugar
                   </Button>
