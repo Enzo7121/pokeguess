@@ -29,7 +29,7 @@ function App() {
   const [loading, setLoading] = useState<boolean>(false);
   const jsConfetti = new JSConfetti();
 
-  const increment = (n: number): number => n + 1;
+  const inc = (n: number): number => n + 1;
 
   const getPokemon = async () => {
     setLoading(true);
@@ -43,12 +43,14 @@ function App() {
     const formattedName = name.trim().toLowerCase().replace(/\./g, "");
 
     if (formattedName === pokemon.name) {
-      setGuessed(increment(guessed));
+      setGuessed(inc);
+      localStorage.setItem("wins", String(inc(guessed)));
       setWon(true);
       jsConfetti.addConfetti();
       return;
     }
-    setMissed(increment(missed));
+    setMissed(inc);
+    localStorage.setItem("misses", String(inc(missed)));
   };
 
   const handleReset = () => {
@@ -59,6 +61,8 @@ function App() {
   };
 
   useEffect(() => {
+    setMissed(Number(localStorage.getItem("misses")));
+    setGuessed(Number(localStorage.getItem("wins")));
     getPokemon();
   }, []);
 
