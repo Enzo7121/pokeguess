@@ -24,6 +24,6 @@
     "vite": "^2.9.0"
   },
   "resolutions": {
-    "csstype": "3.0.10"
+    "csstype": "3.0.11"
   }
 }
