@@ -107,6 +107,7 @@ function App() {
             )}
             <Stack direction="column">
               <Input
+                autoFocus={true}
                 value={name}
                 border="4px"
                 borderColor={answered ? (won ? "green" : "red") : "black"}
