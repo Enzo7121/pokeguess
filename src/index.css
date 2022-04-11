@@ -1,0 +1,16 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 24px;
+}
+
+html {
+  font-family: 'Press Start 2P' !important;
+}
+
+img {
+  image-rendering: pixelated;
+}
