@@ -56,6 +56,12 @@ function App() {
     setLoading(false);
   };
 
+  const onHandleEnter = (e: any) => {
+    if (e.key === "Enter" && !answered) {
+      handleAnswer();
+    }
+  };
+
   const handleAnswer = () => {
     setAnswered(true);
     const formattedName = name.trim().toLowerCase().replace(/\./g, "");
@@ -149,6 +155,7 @@ function App() {
                   padding={5}
                   placeholder="Pokemon name..."
                   ref={pokemonInput}
+                  onKeyDown={onHandleEnter}
                   onChange={(e) => setName(e.target.value)}
                 />
                 <Button
