@@ -56,8 +56,10 @@ function App() {
   };
 
   const onHandleEnter = (e: any) => {
-    if (e.key === "Enter" && !answered) {
+    if (e.key === "Enter" && !answered && name) {
       handleAnswer();
+    } else if (e.key === "Enter" && answered) {
+      handleReset();
     }
   };
 
@@ -139,6 +141,7 @@ function App() {
                 <Image
                   boxSize={{ base: "300px", lg: "400px", xl: "450px" }}
                   filter="auto"
+                  transition="all 0.5s ease-out"
                   objectFit="cover"
                   maxWidth={{ base: "400px", md: "600px" }}
                   brightness={answered ? "100%" : "0%"}
