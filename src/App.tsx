@@ -93,13 +93,19 @@ function App() {
       height="100vh"
       width="100vw"
     >
-      <Box margin="auto" backgroundColor="white" maxW="500px" rounded="20px">
+      <Box
+        padding={6}
+        margin="auto"
+        backgroundColor="white"
+        maxW="500px"
+        rounded="20px"
+      >
         <Center justifyContent="center" alignItems="center">
           <Stack
             width="100%"
             justifyContent="center"
             textAlign="center"
-            marginTop={{ base: "2rem", md: "3rem", lg: "3rem" }}
+            marginTop={{ base: "1rem", md: "2rem", lg: "2rem" }}
           >
             {answered ? (
               <Stack>
