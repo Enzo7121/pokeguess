@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Howl, Howler } from "howler";
 import pokeApi from "./api";
 import {
@@ -33,6 +33,8 @@ function App() {
   const [loading, setLoading] = useState<boolean>(false);
   const [mute, setMute] = useState(true);
   const jsConfetti = new JSConfetti();
+
+  const pokemonInput: any = useRef(null);
 
   const sfx = {
     victory: new Howl({
@@ -73,6 +75,7 @@ function App() {
 
   const handleReset = () => {
     Howler.stop();
+    pokemonInput.current.focus();
     setAnswered(false);
     setName("");
     setWon(false);
@@ -145,6 +148,7 @@ function App() {
                   borderColor={answered ? (won ? "green" : "red") : "black"}
                   padding={5}
                   placeholder="Pokemon name..."
+                  ref={pokemonInput}
                   onChange={(e) => setName(e.target.value)}
                 />
                 <Button
