@@ -104,6 +104,7 @@ function App() {
       width="100vw"
     >
       <Box
+        boxShadow="lg"
         padding={6}
         margin="auto"
         backgroundColor="white"
