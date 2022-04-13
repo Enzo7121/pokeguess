@@ -31,7 +31,6 @@ function App() {
   const [won, setWon] = useState<boolean>(false);
   const [missed, setMissed] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(false);
-  const [mute, setMute] = useState(true);
   const jsConfetti = new JSConfetti();
 
   const pokemonInput: any = useRef(null);
